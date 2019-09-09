@@ -15,7 +15,6 @@ try:
     browser = webdriver.Firefox(executable_path='D:/PythonProjects/geckodriver.exe')
     browser.get(link)
     WebDriverWait(browser, 15).until(expected_conditions.text_to_be_present_in_element((By.ID, "price", ), "$100"))
-    print("sdfdsf")
     browser.find_element_by_id("book").click()
     result = calc(browser.find_element_by_id("input_value").text)
     browser.find_element_by_xpath("//input[@id='answer']").send_keys(result)
